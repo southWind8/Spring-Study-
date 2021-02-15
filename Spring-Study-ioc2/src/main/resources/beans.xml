@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- services -->
+      <bean id="user" class="com.southWind.pojo.User">
+          <!--有参构造下表赋值
+           <constructor-arg index="0" value="南风"/>
+          -->
+          <!--不建议使用这种方式，通过类型创建的
+           <constructor-arg type="java.lang.String" value="南风1"/>
+           -->
+          <!--直接通过参数名来赋值-->
+          <constructor-arg name="name" value="南风2"/>
+
+      </bean>
+    <!--alias是起别名，使用别名和原本的id都可以创建出对象来-->
+    <alias name="user" alias="user2"/>
+    <!--
+    id：bean的唯一标识符，也就是我们学习的对象名
+    class：bean 对象所对月的全限定名，也就是包名+类型
+    name ：也是别名，而且name更高级，可以同时取多个别名
+    property为：set
+
+    -->
+<bean id="userY" class="com.southWind.pojo.UserY">
+    <property name="name" value="南风3"/>
+</bean>
+
+</beans>

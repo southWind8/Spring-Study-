@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--使用spring来创建我们的对象，在spring中这些都成为bean
+    类型 变量名 =new 类型（）
+    Hello hello = new hello（）
+    用了spring后
+    id=变量名
+    class= new 的对象
+    property 相当于给对象的属性设置一个值
+    -->
+    <bean id="hello" class="com.southWind.pojo.Hello">
+        <property name="str" value="Spring"/>
+    </bean>
+
+    <bean id="userDaoImpl" class="com.southWind.dao.UserDaoImpl"/>
+    <bean id="userImpl" class="com.southWind.dao.UserImpl"/>
+    <bean id="UserServiceImpl" class="com.southWind.Service.UserServiceImpl">
+        <property name="userDao" ref="userDaoImpl"/>
+    </bean>
+
+
+
+</beans>
